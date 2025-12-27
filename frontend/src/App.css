@@ -9,8 +9,18 @@
 body {
   margin: 0;
   background-color: var(--background);
+  font-family: Arial, sans-serif;
 }
 
+/* MAIN APP */
+.App {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* UDVÖZLŐ RÉSZ */
 .udvozlo {
   margin-top: 120px;
   min-height: 150px;
@@ -23,82 +33,14 @@ body {
   height: 25vmin;
 }
 
-/*
-MAIN APP
-*/
-.App {
-  width: 70%;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  
-}
-
-/*
-NAVBAR
-*/
-.navbar {
-  background-color: var(--background);
-  border-bottom: 1px solid var(--secondary);
-  min-height: 8vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
-}
-
-.App-logo {
-  height: 9vmin;
-  animation: App-logo-spin infinite 20s linear;
-}
-
-
-
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-/*
-BUTTONS
-*/
-.cart-btn, .login-btn {
-  background: transparent;
-  border: 1px solid var(--accent);
-  color: var(--text);
-  padding: 6px 15px;
-  border-radius: 10px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.cart-btn:hover, .login-btn:hover {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: white;
-}
-
-/*
-CONTAINER
-*/
-.container {
-  flex: 1;
-  margin-top: 40px;
-  padding: 30px;
-  border: 1px solid rgba(121, 104, 198, 0.25);
-  border-radius: 12px;
-  background-color: var(--background);
-}
-
+/* TYPING TEXT */
 .typing-text {
   font-size: 22px;
   white-space: pre-line;
   color: var(--primary);
   border-right: 2px solid var(--accent);
   padding-right: 5px;
-  animation: caretBlink .8s infinite;
+  animation: caretBlink 0.8s infinite;
   max-width: 500px;
   line-height: 1.6;
 }
@@ -109,31 +51,162 @@ CONTAINER
   font-size: 24px;
 }
 
-/* kurzor villogás */
 @keyframes caretBlink {
   0% { border-color: transparent; }
   50% { border-color: var(--accent); }
   100% { border-color: transparent; }
 }
 
-
-
-/*
-LOGO ANIMÁCIÓ
-*/
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* NAVBAR */
+.navbar {
+  background-color: var(--background);
+  border-bottom: 1px solid var(--secondary);
+  min-height: 8vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
 }
 
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+}
 
-/*
-FOOTER
-*/
+/* LOGO */
+.logo img {
+  height: 50px;
+}
+
+/* NAV CENTER */
+.nav-center ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-center a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+.nav-center a:hover {
+  color: var(--accent);
+}
+
+.nav-center a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.nav-center a:hover::after {
+  width: 100%;
+}
+
+/* RIGHT BUTTONS */
+.nav-right {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.btn {
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-trustpilot {
+  background-color: #00b67a;
+  color: white;
+  border: none;
+}
+
+.btn-trustpilot:hover {
+  background-color: #00a066;
+  transform: translateY(-2px);
+}
+
+.btn-cart {
+  background-color: transparent;
+  color: var(--text);
+  border: 1px solid var(--accent);
+  position: relative;
+}
+
+.btn-cart:hover {
+  background-color: rgba(121, 104, 198, 0.1);
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: var(--accent);
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.btn-login {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+}
+
+.btn-login:hover {
+  background-color: #5a4dd1;
+  transform: translateY(-2px);
+}
+
+/* LOGO ANIMÁCIÓ */
+.App-logo {
+  height: 9vmin;
+  animation: App-logo-spin infinite 20s linear;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* CONTAINER */
+.container {
+  flex: 1;
+  margin-top: 40px;
+  padding: 30px;
+  border: 1px solid rgba(121, 104, 198, 0.25);
+  border-radius: 12px;
+  background-color: var(--background);
+}
+
+/* FOOTER */
 footer {
   background-color: var(--background);
   border-top: 1px solid var(--secondary);
@@ -145,22 +218,12 @@ footer {
   margin-top: auto;
 }
 
-.App-logo {
-  height: 9vmin;
-  animation: App-logo-spin infinite 20s linear;
-}
-
-
-
 .footer-right {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-/*
-BUTTONS
-*/
 .cart-btn, .login-btn {
   background: transparent;
   border: 1px solid var(--accent);

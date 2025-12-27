@@ -23,19 +23,19 @@ return new class extends Migration
         Service::create([
             'title' => "Boosting below masters",
             "description" => "rank boost desc",
-            'photo' => "valami/valami.png"
+            'photo' => "/kepek/boostignlow.png"
         ]);
 
         Service::create([
             'title' => "Boosting above masters",
             "description" => "rank boost desc",
-            'photo' => "valami/valami.png"
+            'photo' => "/kepek/boosting.png"
         ]);
 
         Service::create([
             'title' => "Coaching",
             "description" => "coaching desc",
-            'photo' => "valami/valami.png"
+            'photo' => "/kepek/fastdelivering.jpg"
         ]);   
     }
 

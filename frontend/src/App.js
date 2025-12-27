@@ -3,7 +3,8 @@ import logo from './logo.png';
 import logo2 from './logo2.png';
 import './App.css';
 import TypeWriter from './components/TypeWriter';
-
+import Services from "./components/Services";
+import { ServiceProvider } from "./contexts/ServiceContext";
 
 
 function App() {
@@ -14,13 +15,36 @@ function App() {
   return (
     <div className="App">
       <header className="navbar">
-        <img src={logo} className="App-logo" alt="logo" />
+        <div className="header-container">
+          <div className="logo">
+            <a href="index.php">
+              <img src={logo} className="App-logo" alt="logo" />
+            </a>
+          </div>
 
-        <div className="nav-right">
-          <button className="cart-btn">🛒</button>
-          <button className="login-btn">Log in</button>
+          <nav className="nav-center">
+            <ul>
+              <li><a href="Homepage.php">Homepage</a></li>
+              <li><a href="index.php">Services</a></li>
+              <li><a href="AboutUs.php">About us</a></li>
+              <li><a href="Support.php">Support</a></li>
+            </ul>
+          </nav>
+
+          <div className="nav-right">
+            <button className="btn btn-trustpilot">
+              <i className="fa-solid fa-star"></i> Trustpilot
+            </button>
+            <button className="btn btn-cart">
+              <i className="fa-solid fa-shopping-cart"></i> Cart
+              <span className="cart-count">0</span>
+            </button>
+            <button className="btn btn-login">
+              <i className="fa-solid fa-user"></i> Log in
+            </button>
+          </div>
         </div>
-      </header>
+    </header>
 
       <div className="udvozlo"> 
 
@@ -37,6 +61,13 @@ function App() {
       </div>
 
       <div className="container">
+
+          <ServiceProvider>
+
+            <Services />
+
+          </ServiceProvider>
+
       </div>
 
 

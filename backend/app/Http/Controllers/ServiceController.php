@@ -16,7 +16,7 @@ class ServiceController extends Controller
         return Service::all();
     }
 
-    public function show(Service $service)
+    public function show(Service $id)
     {
         return Service::find($id);
     }
