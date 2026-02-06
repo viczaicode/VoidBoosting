@@ -41,7 +41,7 @@ function LoginPage() {
         </div>
 
         <div className="form-group">
-          <label htmlFor="password">Jelszó</label>
+          <label htmlFor="password">Password</label>
           <input
             id="password"
             type="password"
@@ -58,9 +58,9 @@ function LoginPage() {
         </button>
       </form>
       <p style={{ marginTop: "16px" }}>
-        Nincs még fiókod?{" "}
+        Don't have an account yet?{" "}
         <Link to="/register" style={{ color: "#7968c6" }}>
-          Regisztrálj itt.
+          Register here.
         </Link>
       </p>
     </div>

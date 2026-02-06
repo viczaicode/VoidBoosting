@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function RegistrationPage() {
@@ -34,10 +34,10 @@ function RegistrationPage() {
 
   return (
     <div className="login-page">
-      <h2>Regisztráció</h2>
+      <h2>Registration</h2>
       <form className="login-form" onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="name">Név</label>
+          <label htmlFor="name">Username</label>
           <input
             id="name"
             type="text"
@@ -59,7 +59,7 @@ function RegistrationPage() {
         </div>
 
         <div className="form-group">
-          <label htmlFor="password">Jelszó</label>
+          <label htmlFor="password">Password</label>
           <input
             id="password"
             type="password"
@@ -70,7 +70,7 @@ function RegistrationPage() {
         </div>
 
         <div className="form-group">
-          <label htmlFor="password_confirmation">Jelszó megerősítése</label>
+          <label htmlFor="password_confirmation">Confirm Password</label>
           <input
             id="password_confirmation"
             type="password"
@@ -83,9 +83,15 @@ function RegistrationPage() {
         {error && <div className="error-message">{error}</div>}
 
         <button className="btn btn-login" type="submit" disabled={submitting}>
-          {submitting ? "Regisztráció..." : "Regisztráció"}
+          {submitting ? "Registering.." : "Register"}
         </button>
       </form>
+      <p style={{ marginTop: "16px" }}>
+              Already have an account?{" "}
+              <Link to="/login" style={{ color: "#7968c6" }}>
+                Log in here.
+              </Link>
+            </p>
     </div>
   );
 }
