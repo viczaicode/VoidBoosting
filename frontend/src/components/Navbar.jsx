@@ -51,7 +51,7 @@ function Navbar() {
 
           {isAuthenticated ? (
             <>
-              <span>{user?.name}</span>
+              <span className="bejelentkezettFelhasznaloNev">{user?.name}</span>
               <button className="btn btn-login" onClick={handleLogout}>
                 Log out
               </button>
